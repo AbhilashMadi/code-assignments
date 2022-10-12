@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing</title>
+</head>
+<body>
+
+    <ul id="names">
+        <li>John</li>
+        <li>Mary</li>
+        <li>Dora</li>
+        <li>Donny</li>
+    </ul>
+
+    <script>
+
+        let searchPerson = name =>{
+                const liEle = document.getElementsByTagName("li");
+                const findEle = Array.from(liEle).find((liEle) => liEle.textContent === name);
+
+                if( findEle == undefined || findEle == null) console.log("not defined");
+                else console.log("found");
+        }
+
+        console.log(searchPerson(Dora));
+    </script>
+    
+</body>
+</html>
