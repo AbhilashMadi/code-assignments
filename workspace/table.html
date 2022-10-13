@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+
+    </style>
+</head>
+<body>
+   <div id="table-div">
+
+   </div>
+   <script>
+
+    let tableContainer = document.getElementById("table-div");
+    function getStyledTable(){
+        let table = document.createElement("table");
+        table.setAttribute("border", "solid");
+        table.setAttribute("width", "400px");
+        table.style.border-collapse = "collapse";
+        return table;
+    }
+
+    function getTableHeader(){
+        let thead = document.createElement("thead");
+        thead.innerHTML = `<tr><th>ID</th><th>Name</th></tr>`;
+        return thead;
+    }
+
+    function getStudentTableRow(id,name){
+        let tRow = document.createElement("tr");
+        tRow.innerHTML = `<td>${id}</td><td>${name}</td>`;
+        return tRow;
+    }
+
+
+
+     function loadTableRefactored(){
+
+        let table = getstyledTable();
+        tableContainer.appendChild(table);
+
+        let thead = getTableHeader();
+        table.appendChild(thead);
+
+        let tbody = document.createElement("tbody");
+        let tRow = getStudentTableRow(1,Ramesh);
+        tbody.appendChild(tRow);
+        table.appendChild("tbody");
+
+        tableContainer.append(table); 
+     }
+     loadTableRefactored();
+
+   </script>
+</body>
+</html>

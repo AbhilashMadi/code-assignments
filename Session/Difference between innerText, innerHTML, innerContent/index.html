@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference</title>
+</head>
+<body>
+    <p id="para">This small paragraph has some text inside it and a <span>span</span>element inside it.</p>
+    <h3>see the result below:</h3>
+
+    <button type="button" onclick="getinnerText()">Get .innerText()</button>
+    <button type="button" onclick="getinnerHTML()">Get .innerText()</button>
+    <button type="button" onclick="gettextContent()">Get .innerText()</button>
+
+    <para id="demo"></para>
+
+    <script>
+        let getinnerText = () =>{
+           let text = document.getElementById("para").innerText;
+            document.getElementById("demo").innerText = text;
+        }
+
+        let getinnerHTML = () =>{
+            let text = document.getElementById("para").innerHTML;
+            document.getElementById("demo").innerText = text;
+        }
+
+        let gettextContent = () => {
+                let text = document.getElementById("para").textContent;
+                document.getElementById("demo").innerText = text;
+            }
+    </script>
+
+</body>
+</html>
