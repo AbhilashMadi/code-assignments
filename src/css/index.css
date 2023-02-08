@@ -1,0 +1,99 @@
+/*
+** VARIABLES
+*/
+
+:root {
+  --ff-open_sans: "Open Sans", sans-serif;
+  --ff-space_grotesk: "Space Grotesk", sans-serif;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  --fs-1: 5.5rem;
+  --fs-2: 3.5rem;
+  --fs-3: 2.5rem;
+  --fs-4: 1.5rem;
+  --fs-5: 1rem;
+  --fs-6: 0.5rem;
+
+  --section-padding: 40px;
+
+  --radius-circle: 50%;
+  --radius-60: 60px;
+  --radius-50: 50px;
+  --radius-30: 30px;
+  --radius-20: 20px;
+  --radius-curve: 10px;
+  --radius-5: 5px;
+
+  /*
+  ** colors
+  */
+  --snow-white: snow;
+  --light-black: #1e1e1e;
+  --smoky-black: hsl(0, 0%, 6%);
+  --black-coral: hsl(231, 6%, 40%);
+  --red: hsl(0, 100%, 66%);
+  --Lighgrayishviolet: hsl(270, 3%, 87%);
+  --violet: hsl(278, 68%, 11%);
+
+  /*
+  ** gradients
+  */
+
+  --Lineargradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+
+  /*
+  ** shadows
+  */
+  --shadow-one: 0 15px 40px 0 hsla(224, 24%, 47%, 0.1);
+  --shadow-two: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/*
+** RESET
+*/
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+input:focus{
+    outline: none;
+    border:none;
+}
+
+button{
+    cursor: pointer;
+}
+
+::selection{
+    background-color: blueviolet;
+    color: var(--white);
+}
+
+body{
+    font-family: var(--ff-space_grotesk);
+    font-size: var(-fs-5);
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
