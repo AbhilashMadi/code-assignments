@@ -50,10 +50,21 @@
 
 .card-address,.card-contact {
     font-weight: var(--fw-300);
+    color: var(--blue)
 }
 
 .card-front hr{
     margin-bottom: 0.8rem;
     height: 1px;
-    background-color: #ccc;
+    background-color: var(--blue);
+}
+
+.heading-one{
+    color: var(--smoky-black);
+    font-family: var(--ff-open_sans) !important;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: var(--fw-300);
+    text-align: center;
+    margin: -4rem auto 3rem auto;
 }

@@ -11,6 +11,7 @@ const MemebershipCard = ({formData}) => {
 
   return (
     <aside className="card-deco">
+      <h1 className="heading-one">Fellowship Card</h1>
       <div className="card-front">
         <img src={logo} alt="logo" draggable="false" />
         <p className="card-name">REACT FACEBOOK</p>
@@ -25,10 +26,12 @@ const MemebershipCard = ({formData}) => {
         <ul>
           <li>Full Name:</li>
           <li>Mobile No:</li>
-          <li>E-mail</li>
+          <li>E-mail:</li>
           <li>
             Address:
-            <address>"Ho no, Street, Mandal, <br /> District, State"</address>
+            <address>
+                "Ho no, Street, Mandal, <br /> District, State"
+            </address>
           </li>
           <li>Pin Code:</li>
           <li>Membership Type:</li>
