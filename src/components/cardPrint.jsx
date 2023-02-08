@@ -1,11 +1,25 @@
-import "../css/printcard.css";
-import "../assets/print.svg";
-import "../assets/success.svg"
+import "../css/printCard.css";
+import print from "../assets/print.svg";
+// import success from "../assets/success.svg";
 
-import React from 'react'
+const CardPrint = ({setFormData}) => {
 
-export const cardPrint = () => {
+    const resetForm = () => {
+        setFormData({firstName:null,lastName: null, mobileNumber:null,emailAddress: null, homeNumber:null, street:null,
+        mandal:null, district:null, state: null, pinCode: null, 
+        memberShipType: null, memberShipFee:null});
+    }
+
   return (
-    <div><img src="" alt="" /></div>
+    <div className="printCard">
+        <img src={print} alt="print-machine-svg" />
+        <p>Thank you!</p>
+        <p>Succesfully added your card details</p>
+        <button className="btn-primary" on-onClick={resetForm}>
+            Download Card
+        </button>
+    </div>
   )
-}
+};
+
+export default CardPrint;

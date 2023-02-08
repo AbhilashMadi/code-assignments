@@ -1,0 +1,59 @@
+.card-deco{
+    font-family: var(--ff-space_grotesk);
+    color: var(--snow-white);
+}
+
+.card-front,
+.card-back{
+    max-width: 28rem;
+    height: 15.5rem;
+    border-radius: var(--radius-curve);
+    color: var(--snow-white);
+    background-color: var(--black-coral);
+    position: relative;
+    padding: 2rem;
+}
+
+.card-front{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 0 auto 32px auto;
+    text-align: center;
+}
+
+.card-front img{
+    width: 5rem;
+    margin-block: auto;
+    margin-inline: auto;
+}
+
+.card-back img{
+    width: 6rem;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    border-radius: var(--radius-curve);
+}
+
+.card-name{
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    margin-top: 0.5rem;
+}
+
+.card-front .card-name{
+    font-size: var(--fs-4);
+    margin-bottom: 0.5rem;
+}
+
+.card-address,.card-contact {
+    font-weight: var(--fw-300);
+}
+
+.card-front hr{
+    margin-bottom: 0.8rem;
+    height: 1px;
+    background-color: #ccc;
+}

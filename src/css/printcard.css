@@ -1,0 +1,30 @@
+.printCard {
+  text-align: center;
+  color: var(--smoky-black);
+  max-width: 30rem;
+  margin-inline: auto;
+  font-family: var(--ff-space_grotesk);
+}
+
+.printCard p:first-of-type {
+  font-size: var(--fs-5);
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: var(--fw-600);
+}
+
+.printCard p:last-of-type {
+  opacity: 0.8;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-weight: var(--fw-400);
+}
+
+.printCard .btn-primary {
+  width: 60%;
+}
+
+.printCard img {
+  width: 80%;
+}

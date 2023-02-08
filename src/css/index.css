@@ -36,7 +36,7 @@
   --snow-white: snow;
   --light-black: #1e1e1e;
   --smoky-black: hsl(0, 0%, 6%);
-  --black-coral: hsl(231, 6%, 40%);
+  --black-coral: hsl(233, 9%, 19%);
   --red: hsl(0, 100%, 66%);
   --Lighgrayishviolet: hsl(270, 3%, 87%);
   --violet: hsl(278, 68%, 11%);
@@ -83,7 +83,7 @@ button{
 
 ::selection{
     background-color: blueviolet;
-    color: var(--white);
+    color: var(--snow-white);
 }
 
 body{
