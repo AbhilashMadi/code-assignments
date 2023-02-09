@@ -9,12 +9,18 @@ const CardPrint = ({setFormData}) => {
         memberShipType: null, memberShipFee:null});
     }
 
+    const handleDownload = () => {
+      resetForm();
+    }
+
   return (
     <div className="printCard">
       <img src={print} alt="print-machine-svg" />
       <p>Thank you!</p>
       <p>Succesfully added your card details</p>
-      <button className="btn btn-primary" onClick={resetForm}>Download Card</button>
+      <button className="btn btn-primary" onClick={handleDownload}>
+        Download Card
+      </button>
     </div>
   );
 };

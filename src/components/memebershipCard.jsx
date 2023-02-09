@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 //helpers
 import getId from "./helpers/generateId";
 
-const MemebershipCard = ({ formData }) => {
+const MemebershipCard = ({formData}) => {
   const {
     firstName,
     lastName,
