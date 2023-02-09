@@ -92,6 +92,10 @@ body{
     font-size: var(-fs-5);
 }
 
+/*
+** DOCUMENT ENTRY
+*/
+
 #root {
   display: flex;
   min-height: 100vh;

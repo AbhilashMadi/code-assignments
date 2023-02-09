@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 //helpers
 import getId from "./helpers/generateId";
 
-const MemebershipCard = ({formData}) => {
+const MemebershipCard = ({ formData }) => {
   const {
     firstName,
     lastName,
@@ -40,7 +40,7 @@ const MemebershipCard = ({formData}) => {
 
   return (
     <aside>
-    <div className="card-deco" size="A4">
+      <div className="card-deco" size="A4">
         <h1 className="heading-one">Fellowship Card</h1>
         <div className="card-front">
           <img src={logo} alt="logo" draggable="false" />

@@ -144,10 +144,10 @@ const CardForm = ({ setFormData, formData, pull }) => {
             <option value="default" disabled>
               Choose One
             </option>
-            <option value="premium">Premium</option>
-            <option value="premiumAdvanced">Premium Advanced</option>
-            <option value="fellowship">Fellowship</option>
-            <option value="fellowshipAdvanced">fellowship Advanced</option>
+            <option value="Premium">Premium</option>
+            <option value="PremiumAdvanced">Premium Advanced</option>
+            <option value="Fellowship">Fellowship</option>
+            <option value="FellowshipAdvanced">fellowship Advanced</option>
             <option value="mainMember">Main Member</option>
           </select>
         </label>

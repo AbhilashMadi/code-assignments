@@ -4,8 +4,9 @@ import print from "../assets/print.svg";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-const CardPrint = ({setFormData}) => {
+const CardPrint = ({setFormData,formData}) => {
 
+  //reset the form data to it's intail
     const resetForm = () => {
         setFormData({firstName:null,lastName: null, mobileNumber:null,emailAddress: null, homeNumber:null, street:null,
         mandal:null, district:null, state: null, pinCode: null, 
@@ -17,6 +18,7 @@ const CardPrint = ({setFormData}) => {
       exportPDF();
     }
 
+    //Function for rendering and extracting the PDF with help of jsPDF, htmm2Canvas
     const exportPDF = () => {
       const input = document.getElementById("Card");
       html2canvas(input, {
@@ -37,10 +39,14 @@ const CardPrint = ({setFormData}) => {
     <div className="printCard">
       <img src={print} alt="print-machine-svg" />
       <p>Thank you!</p>
-      <p>Succesfully added your card details</p>
-      <button className="btn btn-primary" onClick={handleDownload}>
+      <p>{formData?.fee ? "Succesfully added your card details" : "Please fill the Details to Download the Card"}</p>
+      {
+        formData.fee ? (
+          <button className="btn btn-primary" onClick={handleDownload}>
         Download Card
       </button>
+        ) : (null)
+      }
     </div>
   );
 };

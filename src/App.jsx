@@ -7,14 +7,17 @@ import MemebershipCard from './components/memebershipCard';
 import CardForm from './components/cardForm';
 
 export default function App() {
-  const [formData, setFormData] = useState({firstName: null, lastName: null, mobileNumber:null, emailAddress:null, address:null, pinCode:null, memberShipType:null,fee:null})
 
+  const [formData, setFormData] = useState({firstName: null, lastName: null, mobileNumber:null, emailAddress:null, address:null, pinCode:null, memberShipType:null,fee:null})
   const [show, setShow] = useState(false);
   
+  //passing a callBack function for extracting event click from form`
   const pull = (view) => {
     setShow(view);
   }
 
+
+  //print condition: show when data is filled, show when submit,print button is clicked
   return (
     <React.Fragment>
       <section id="Card">
@@ -23,7 +26,7 @@ export default function App() {
       <main className="cardOverflow">
         <div>
           {show ? (
-            <CardPrint setFormData={setFormData}/>
+            <CardPrint setFormData={setFormData} formData = {formData}/>
           ) : (
             <CardForm
               setFormData={setFormData}
@@ -32,7 +35,6 @@ export default function App() {
             />
           )}
         </div>
-        {/* <button onClick={exportPDF}>Download</button> */}
       </main>
     </React.Fragment>
   );
