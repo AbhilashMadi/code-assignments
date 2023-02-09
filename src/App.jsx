@@ -15,18 +15,24 @@ export default function App() {
     setShow(view);
   }
 
+
+
   return (
     <React.Fragment>
       <MemebershipCard formData={formData}/>
       <main className="cardOverflow">
         <div>
-          {
-            show
-            ? <CardPrint setFormData={setFormData}/>
-            : <CardForm setFormData={setFormData} formData={formData} pull={pull}/>
-          }
+          {show ? (
+            <CardPrint setFormData={setFormData} />
+          ) : (
+            <CardForm
+              setFormData={setFormData}
+              formData={formData}
+              pull={pull}
+            />
+          )}
         </div>
       </main>
     </React.Fragment>
-  )
+  );
 }

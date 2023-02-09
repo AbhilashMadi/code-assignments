@@ -14,9 +14,24 @@
     padding: 2rem;
 }
 
-.card-back *li{
-    width: 30px;
-    overflow: hidden;
+.card-back{
+    padding-top: 1rem;
+}
+
+.card-back li{
+    max-width: 12rem;
+    word-wrap: break-word;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.card-back li span{
+    color: var(--blue);
+}
+
+.card-back li address{
+    color: var(--blue);
+    margin-bottom: none;
 }
 
 .card-front{
@@ -34,11 +49,22 @@
 }
 
 .card-back img{
-    width: 6rem;
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-curve);
     position: absolute;
     right: 2rem;
     top: 2rem;
-    border-radius: var(--radius-curve);
+    object-fit: cover;
+    border: 1px solid var(--blue);
+}
+
+.card-back .user-id{
+    position: absolute;
+    right: 2.5rem;
+    bottom: 7rem;
+    font-size: 0.8rem;
+    color: var(--blue);
 }
 
 .card-name{
@@ -55,7 +81,7 @@
 
 .card-address,.card-contact {
     font-weight: var(--fw-300);
-    color: var(--blue)
+    color: var(--blue);
 }
 
 .card-front hr{

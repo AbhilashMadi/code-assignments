@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/cardForm.css";
 
 const CardForm = ({ setFormData, formData, pull }) => {
@@ -32,15 +32,10 @@ const CardForm = ({ setFormData, formData, pull }) => {
     // }
 
     setFormData({ ...formData, [name]: e.target.value });
-    console.log(formData);
   };
 
   const handleError = (target, message = "Error", type = "add") => {
     //error message
-  };
-
-  const handleFiles = (e) => {
-    console.log(e);
   };
 
   const handleSubmit = (e) => {
@@ -58,6 +53,8 @@ const CardForm = ({ setFormData, formData, pull }) => {
 
     // if Ok ----> post request
   };
+
+  //PDF Export
 
   return (
     <form onSubmit={handleSubmit} className="card-form">
@@ -169,10 +166,8 @@ const CardForm = ({ setFormData, formData, pull }) => {
         />
       </label>
 
-      <input type="file" name="profileImage" onChange={handleFiles} />
-
       <div className="form-buttons">
-        <button className=" btn btn-primary">upload profile</button>
+        <button className="btn btn-primary">Print Card</button>
         <button
           stype="submit"
           className="btn btn-primary btn-submit"
