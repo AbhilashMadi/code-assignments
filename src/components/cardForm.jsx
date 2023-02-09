@@ -1,10 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/cardForm.css";
 
-const CardForm = ({ setFormData, formData }) => {
-  const handleInput = (e) => {};
+const CardForm = ({ setFormData, formData, pull }) => {
+  const [view, setView] = useState(false);
 
-  const handleSubmit = () => {};
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "firstName" || name === "lastName") {
+      e.target.value = value.replace(/[0-9\s]/g, "");
+    }
+
+    if (name === "mobileNumber") {
+      e.target.value = value
+        .toString()
+        .replace(/[a-zA-Z]/, "")
+        .replace(/\d{5}/g, "$& ");
+    }
+
+    if (name === "pinCode") {
+      e.target.value = value
+        .toString()
+        .replace(/[a-zA-Z]/, "")
+        .replace(/(\w{4})(?!$)/g, "$1")
+        .trim()
+        .slice(0, 10);
+    }
+
+    // if(name === "address") {
+    //   e.target.value = value.replace(/\s+/g, ", ");
+    // }
+
+    setFormData({ ...formData, [name]: e.target.value });
+    console.log(formData);
+  };
+
+  const handleError = (target, message = "Error", type = "add") => {
+    //error message
+  };
+
+  const handleFiles = (e) => {
+    console.log(e);
+  };
+
+  const handleSubmit = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setView((pre) => !pre);
+
+    for (let i in formData) {
+      if (!formData[i]) {
+        handleError(i, "Can't be blanck");
+      } else {
+        handleError(i, "", "remove");
+      }
+    }
+
+    // if Ok ----> post request
+  };
 
   return (
     <form onSubmit={handleSubmit} className="card-form">
@@ -17,6 +70,7 @@ const CardForm = ({ setFormData, formData }) => {
             className="card-input"
             placeholder="e.g. Abhilash"
             onChange={handleInput}
+            maxLength={15}
           />
         </label>
         <p className="info info-hidden" aria-live="polite"></p>
@@ -29,6 +83,7 @@ const CardForm = ({ setFormData, formData }) => {
             className="card-input"
             placeholder="e.g. Kumar"
             onChange={handleInput}
+            maxLength={15}
           />
         </label>
         <p className="info info-hidden" aria-live="polite"></p>
@@ -89,7 +144,9 @@ const CardForm = ({ setFormData, formData }) => {
             name="memberShipType"
             onChange={handleInput}
             className="card-input-select">
-            <option value="default" disabled selected>Choose One</option>
+            <option value="default" disabled>
+              Choose One
+            </option>
             <option value="premium">Premium</option>
             <option value="premiumAdvanced">Premium Advanced</option>
             <option value="fellowship">Fellowship</option>
@@ -112,9 +169,14 @@ const CardForm = ({ setFormData, formData }) => {
         />
       </label>
 
+      <input type="file" name="profileImage" onChange={handleFiles} />
+
       <div className="form-buttons">
-        <button className=" btn btn-primary" >upload profile</button>
-        <button stype="submit" className="btn btn-primary">
+        <button className=" btn btn-primary">upload profile</button>
+        <button
+          stype="submit"
+          className="btn btn-primary btn-submit"
+          onSubmit={pull(view)}>
           submit Form
         </button>
       </div>

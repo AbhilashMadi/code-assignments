@@ -4,6 +4,7 @@
   max-width: 30rem;
   margin-inline: auto;
   font-family: var(--ff-space_grotesk);
+  margin-left: 10rem;
 }
 
 .printCard p:first-of-type {
